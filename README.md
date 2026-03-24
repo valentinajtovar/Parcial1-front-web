@@ -16,15 +16,14 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-
 ## Ejecutar pruebas
 
-Ejecute las pruebas 
+Ejecute las pruebas
 
 ```bash
 npm test
 ```
 
 ## Reporte técnico
-Al realizar un sort sobre el dom y no sobre la base de datos como tal se evita la mutación directa en react. 
 
+Al realizar un sort de manera local se evita una mutacion directa sobre react.
