@@ -2,11 +2,14 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import AuthorFilters from "../../components/authorFilter";
+
 
 export default function AuthorsPage() {
   const [authors, setAuthors] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+
 
   const handleDelete = async (id) => {
     try {
@@ -50,6 +53,8 @@ export default function AuthorsPage() {
   if (error) return <p style={{ color: "white" }}>Error: {error}</p>;
 
   return (
+    //funcion prueba
+    
     <main
       style={{
         minHeight: "100vh",
@@ -58,6 +63,8 @@ export default function AuthorsPage() {
         fontFamily: "Arial, sans-serif",
       }}
     >
+      
+      
       <h1
         style={{
           color: "white",
@@ -68,6 +75,9 @@ export default function AuthorsPage() {
       >
         Autores
       </h1>
+       <section style={{ marginBottom: "24px" }}>
+        <AuthorFilters authors={authors} onOrderChange={setAuthors} />
+      </section>
 
       {authors.length === 0 ? (
         <p style={{ color: "white", textAlign: "center" }}>
